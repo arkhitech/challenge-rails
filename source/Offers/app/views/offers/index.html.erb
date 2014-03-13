@@ -1,0 +1,16 @@
+
+<div class="row">
+<%=link_to 'Crawl', crawl_offers_path, class: 'button'%>
+<strong><%=pluralize(@offers.size, 'Offer')%></strong>
+</div>
+<div class="row">
+<% @offers.each do |offer| %>
+  <div class='offer panel'>
+    <h5><%=offer.title%></h5>
+    <p><%=offer.description%>
+      <br/>
+      <%=link_to 'Get Deal', offer.url, class: 'button right'%>
+    </p>
+  </div>
+<% end %>
+</div>
